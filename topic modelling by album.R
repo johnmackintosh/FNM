@@ -5,7 +5,7 @@
     anti_join(stop_words) %>% 
     filter(stringr::str_detect(word,"[a-z`]$"),
            !word %in% stop_words$word) %>% 
-    filter(word %notin% c("b","e","a","g","r","s","i","v","la","fucking")) %>% 
+    filter(word %notin% c("b","e","a","g","r","s","i","v","la")) %>% 
     count(Title, word, sort = TRUE) %>%
     ungroup() %>% 
     select(Title,word,n) %>% 
